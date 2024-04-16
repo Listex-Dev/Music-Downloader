@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Скачивание завершено</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Файл успешно скачан!</h1>
+        <p>Название файла: {{ file_name }}</p>
+        <div class="audio-player">
+            <audio id="myAudio" controls style="display: none">
+                <source src="/static/music/{{ file_name }}.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <div class="controls">
+                <button id="playBtn"><i class="fas fa-play"></i></button>
+                <button id="pauseBtn" style="display: none"><i class="fas fa-pause"></i></button>
+                <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="1">
+                <input type="range" id="seekControl" min="0" value="0">
+                <div id="volumeText">Громкость: 100%</div>
+                <div id="timeText">Прошедшее время: 00:00 / 00:00</div>
+            </div>
+        </div>
+        <a href="/static/music/{{ file_name }}.mp3" download="{{ file_name }}">Скачать</a>
+    </div>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="{{ url_for('static', filename='audio-player.js') }}"></script>
+</body>
+</html>

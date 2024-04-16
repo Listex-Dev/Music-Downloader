@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Поиск YouTube</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Поиск YouTube</h1>
+        <form action="/search" method="post">
+            <input type="text" name="query" placeholder="Введите запрос">
+            <input type="submit" value="Поиск">
+        </form>
+    </div>
+</body>
+</html>

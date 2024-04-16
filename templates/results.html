@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Результаты поиска</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Результаты поиска</h1>
+        <form action="/download" method="post">
+            {% for result in results %}
+                <input type="radio" name="video_id" value="{{ result['videoId'] }}">
+                <input type="hidden" name="title" value="{{ result['title'] }}">
+                {{ result['title'] }} - {{ result['author'] }}<br>
+            {% endfor %}
+            <input type="submit" value="Скачать">
+        </form>
+    </div>
+</body>
+</html>
