@@ -26,7 +26,7 @@
 1. Клонировать репозиторий / Clone the repository:
 
 ```bash
-git clone https://github.com/example/music-downloader.git
+git clone https://github.com/Listex-Dev/Music-Downloader.git
 ```
 
 2. Установить зависимости / Install dependencies:
